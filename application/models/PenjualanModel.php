@@ -8,9 +8,7 @@ Class PenjualanModel extends CI_Model {
     }
 
     function kode_akhir() {
-        $this->db->select('kode');
-        $this->db->order_by('id', 'DESC');
-        $this->db->limit(1);
+        $this->db->select_max('kode');
         return $this->db->get('penjualan')->row()->kode;
     }
 

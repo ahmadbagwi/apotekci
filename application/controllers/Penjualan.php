@@ -111,17 +111,17 @@ Class Penjualan extends CI_Controller {
 						'profit' => $profit
 					);
 
-		// $simpan_jual = $this->PenjualanModel->simpan_jual($penjualan);
-		// $simpan_bayar = $this->PenjualanModel->simpan_bayar($pembayaran);
+		$simpan_jual = $this->PenjualanModel->simpan_jual($penjualan);
+		$simpan_bayar = $this->PenjualanModel->simpan_bayar($pembayaran);
 
-		// if($simpan_jual != null && $simpan_bayar !=null){
-		// 	$this->PenjualanModel->update_stok($update_stok);
-		// 	redirect('Nota');
-		// 	}
+		if($simpan_jual != null && $simpan_bayar !=null){
+			$this->PenjualanModel->update_stok($update_stok);
+			redirect('Nota');
+			}
 		
 		}
-		var_dump($kode_akhir);
-		var_dump($kode);
+		// var_dump($kode_akhir);
+		// var_dump($kode);
     }
 
     public function _rules() {
