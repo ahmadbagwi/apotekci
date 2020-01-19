@@ -46,6 +46,7 @@ Class Penjualan extends CI_Controller {
 	}
 
 	function create_action() {
+		$this->db->cache_off();
 		$this->_rules();
 
         if ($this->form_validation->run() == FALSE) {
@@ -54,6 +55,7 @@ Class Penjualan extends CI_Controller {
 		//ambil kode terakhir dan tambahkan nilai 1
         $kode_akhir = $this->PenjualanModel->kode_akhir();
         if (!empty($kode_akhir)) {
+        	settype($kode_akhir, "integer");	
         	$kode = $kode_akhir + 1;
         } else { $kode = 1; }
         
@@ -110,7 +112,8 @@ Class Penjualan extends CI_Controller {
 						'kembali' => $kembali,
 						'profit' => $profit
 					);
-
+		var_dump($kode_akhir);
+		var_dump($kode);
 		$simpan_jual = $this->PenjualanModel->simpan_jual($penjualan);
 		$simpan_bayar = $this->PenjualanModel->simpan_bayar($pembayaran);
 
@@ -120,8 +123,7 @@ Class Penjualan extends CI_Controller {
 			}
 		
 		}
-		// var_dump($kode_akhir);
-		// var_dump($kode);
+		
     }
 
     public function _rules() {
