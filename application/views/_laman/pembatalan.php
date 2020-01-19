@@ -1,8 +1,8 @@
 			<div class="col-md-9 content"><!--mulai konten-->
 				<p class="home"><a href="<?php echo base_url('Dashboard');?>">Home</a> > <strong> Pembatalan</strong></p>
+                <?php echo $this->session->userdata('message') <> '' ? '<span class="alert alert-success" role="alert">'.$this->session->userdata('message') : ''.'</span>'; ?><br>
 				<?php echo form_open('Pembatalan/create_action'); ?>
 				<legend>Pembatalan Transaksi</legend>
-				<?php echo $this->session->userdata('message') <> '' ? '<span class="alert alert-success" role="alert">'.$this->session->userdata('message') : ''.'</span>'; ?><br>
 				<div class="col-md-4">
 					<div class="form-group">
                         <label for="int">Kode Transaksi</label>
