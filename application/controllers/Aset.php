@@ -4,6 +4,7 @@ Class Aset extends CI_Controller {
 	function __construct() {
         parent::__construct();
         $this->load->model('AsetModel');
+        $this->db->cache_off();
     }
 
 	function index() {
