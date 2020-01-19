@@ -7,7 +7,7 @@ Class TutupKas extends CI_Controller {
         $this->load->model('TutupkasModel');
         $this->load->model('NotaModel');
         $this->load->model('LaporanModel');
-        
+        $this->db->cache_off();
       }
 
     //Ambil data penjualan berdasarkan jam shift yang dipilih
