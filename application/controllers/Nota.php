@@ -4,9 +4,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 Class Nota extends CI_Controller {
 	function __construct()
         {
-            parent::__construct();
-            $this->load->model('NotaModel');
+           parent::__construct();
+           $this->load->model('NotaModel');
            $this->load->model('PengaturanModel');
+           $this->db->cache_off();
         }
 
 	function index() {
