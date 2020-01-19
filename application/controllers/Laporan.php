@@ -5,7 +5,7 @@ Class Laporan extends CI_Controller {
 	function __construct(){
         parent::__construct();
         $this->load->model('LaporanModel');
-        
+        $this->db->cache_off();
       }
 
 	function detail() {
