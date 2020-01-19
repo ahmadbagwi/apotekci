@@ -8,8 +8,9 @@ Class PenjualanModel extends CI_Model {
     }
 
     function kode_akhir() {
-        $this->db->select_max('kode');
-        return $this->db->get('penjualan')->row()->kode;
+        $this->db->order_by('id', 'desc');
+        $this->db->limit(1);
+        return $this->db->get('pembayaran')->row()->kode;
     }
 
     public function cari_produk($nama){
