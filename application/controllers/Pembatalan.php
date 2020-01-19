@@ -4,16 +4,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 Class Pembatalan extends CI_Controller {
 	public function __construct()
         {
-                parent::__construct();
-                $this->load->model('PembatalanModel');
-				$this->load->model('PenjualanModel');
+            parent::__construct();
+            $this->load->model('PembatalanModel');
+			$this->load->model('PenjualanModel');
+            $this->db->cache_off();
         }
 
     function index() {
         $tanggal = date('Y-m');
         $data = array('data_pembatalan' => $this->PembatalanModel->data_pembatalan($tanggal),
-    	              'title' => "Pembatalan Transaksi",
-                      'data_pembatalan' => $this->PembatalanModel->data_pembatalan($tanggal)
+    	              'title' => "Pembatalan Transaksi"
                      );
     	$this->load->view('_admin/header', $data);
     	$this->load->view('_laman/pembatalan');
