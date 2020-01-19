@@ -37,6 +37,7 @@ Class Laporan extends CI_Controller {
 
 		$this->load->view('_admin/header', $data);
 		$this->load->view('_laporan/laporan_harian');
+		$this->db->cache_delete_all();
 	}
 
 	function cetak_harian() {
