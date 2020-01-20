@@ -19,15 +19,15 @@ Class TutupKas extends CI_Controller {
         $total_penjualan_shift = $this->LaporanModel->total_penjualan_harian($tanggal, $jam_mulai, $jam_tutup);
             if (count($total_penjualan_shift) > 0) {
                 //var_dump($query);
-            /*foreach ($query as $row) {
-                $result[] = array(
-                    'jual' => $row->jumlahJual
-                );
-                $json = json_encode($result);
-                echo $json;
-            }
-            $json = json_encode($query);
-               echo $json; */
+            // foreach ($query as $row) {
+            //     $result[] = array(
+            //         'jual' => $row->jumlahJual
+            //     );
+            //     $json = json_encode($result);
+            //     echo $json;
+            // }
+            // $json = json_encode($query);
+            //    echo $json; 
                echo $total_penjualan_shift;
         } 
             
